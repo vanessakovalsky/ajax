@@ -1,0 +1,15 @@
+== TP 1 ==
+
+- Installer l'application qui se trouve dans le dossier source
+ dans Xampp (dossier htdocs) + importer la base de données du fichier kingoludo.sql
+- Dans le formulaire d'ajout d'un utilisateur (se trouvant dans src/View/formulaire_ajout_utilisateur.html.php)
+ajouter les 3 champs suivants :
+-- Code postal
+-- Ville
+-- Département
+- Avec Javascript, nous allons automatiquement remplir la ville et le département en fonction
+du code postal
+- Pour cela nous devons appeler le WS : 
+https://data.opendatasoft.com/api/records/1.0/search/?dataset=code-postal-code-insee-2015@public&q=code_postal:77140&facet=nom_reg&facet=code_dept&facet=nom_dept&facet=statut&facet=insee_com
+avec les bonnes données, puis peupler laliste de ville (plusieurs villes peuvent correspondre à un code postal)
+et le departement avec le retour en JSON qui nous est envoyé

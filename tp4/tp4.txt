@@ -1,0 +1,9 @@
+== TP 4 - Authentification JWT ==
+
+- Nous allons utiliser l'authentification JWT pour nos appels WS
+- Appeler le WS d'authentification log_ws.php avec le compte de l'utilisateur
+(lors de la soumission du formulaire d'authentification)
+- Utiliser le token pour l'ensemble des appels WS que nous avons fait
+
+	
+
