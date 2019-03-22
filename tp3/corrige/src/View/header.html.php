@@ -38,6 +38,9 @@
         </div>
       </li>
     <?php } ?>
+    <?php if(isset($_SESSION['user_name'])){?>
+      <li class="nav-item"><a class="nav-link" href="index.php?actions=Chat">Chat</a></li>
+    <?php } ?>
       <?php if(!isset($_SESSION['user_name'])){?>
         <li class="nav-item"><a class="nav-link" href="index.php?actions=Connexion">Connexion</a></li>
       <?php } ?>
