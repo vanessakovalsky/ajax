@@ -44,7 +44,7 @@
   </div>
   <div class="form-group">
     <label for="departement">Département</label>
-    <input name="departement" type="text" />
+    <input name="departement" id="departement" disabled type="text" />
   </div>
     <button type="submit" class="btn btn-primary">Envoyer</button>
 </form>
