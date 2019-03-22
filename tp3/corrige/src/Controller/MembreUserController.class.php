@@ -39,4 +39,19 @@ class MembreUserController extends UtilisateurController
     $json_result = json_encode($result);
     return $json_result;
   }
+
+  public function SaveMessage($db, $message){
+    $stmt = $db->prepare("INSERT INTO messages (user_id, text, time) VALUES (:user, :text, :time)");
+    $stmt->bindValue(":user",1);
+    $stmt->bindValue(":text",$message->message);
+    $stmt->bindValue(":time",date("Y-m-d"));
+    $result = $stmt->execute();
+    if($result){
+      $message = json_encode('Message enregistré');
+    }
+    else {
+      $message = json_encode('Erreur');
+    }
+    return $message;
+  }
 }

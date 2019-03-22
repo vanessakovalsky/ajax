@@ -122,3 +122,22 @@ function loadMessages(){
   });
 
 }
+
+function envoyerChat(){
+  var message = $('#chat-text').val();
+  $.ajax({
+    type: "POST",
+    url: "http://localhost/ajax/tp3/corrige/index.php?actions=SaveMessage",
+    // The key needs to match your method's input parameter (case-sensitive).
+    data: JSON.stringify({ message: message }),
+    contentType: "application/json; charset=utf-8",
+    dataType: "json",
+    success: function(data){
+      loadMessages();
+      alert(data);
+    },
+    failure: function(errMsg) {
+        alert(errMsg);
+    }
+});
+}

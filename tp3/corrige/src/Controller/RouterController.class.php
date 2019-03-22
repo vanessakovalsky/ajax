@@ -32,6 +32,14 @@ class RouterController {
             $utilisateur = new AdminUserController($session);
             $content = $utilisateur->ModificationUtilisateur($user_id, $_POST);
             return $content;
+        case "SaveMessage":
+            $membre = new MembreUserController();
+            $json = file_get_contents('php://input');
+            $json_decode = json_decode($json);
+            $json = $membre->SaveMessage($this->db, $json_decode);
+            header('Content-type: application/json');
+            echo $json;
+            die();
         default:
           return 'Action inexistante';
       }
