@@ -76,12 +76,18 @@ class RouterController {
         break;
       case 'VoirUtilisateur':
           break;
-       case 'VoirJeu':
-          $jeu = new JeuController();
-          ob_start();
-          $content = $jeu->voirJeu(1);
-          $content = ob_get_clean();
-          return $content;
+      case 'VoirJeu':
+        $jeu = new JeuController();
+        ob_start();
+        $content = $jeu->voirJeu(1);
+        $content = ob_get_clean();
+        return $content;
+      case 'PretJeu':
+        $collection = new CollectionController();
+        ob_start();
+        $content = $collection->pretJeu();
+        $content = ob_get_clean();
+        return $content;
       default:
         return 'Action inexistante';
       }

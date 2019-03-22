@@ -239,7 +239,36 @@ class UtilisateurModel implements EntiteInterface
     }
 
     public function lister(){
-
+    /*  $client = new Client([
+          // Base URI is used with relative requests
+          'base_uri' => 'https://virtserver.swaggerhub.com',
+          // You can set any number of default request options.
+          'timeout'  => 2.0,
+      ]);
+      $request = '/vanessakovalsky/BoardGames/1.0.0/users';
+      $reponse = $client->request('GET',$request);
+      $user_status = $reponse->getStatusCode();
+      $user_data = [];
+      if($user_status == 200){
+        //On construit un objet UserModel
+        $user_data[] = json_decode($reponse->getBody()->getContents(), true);
+        $user = new static($user_data);
+        return $user;
+      }
+      else {
+        return "connexion impossible";
+      }*/
+      $user_data = [
+        [
+          "id" => 1,
+          "username" => "admin"
+        ],
+        [
+          "id" => 2,
+          "username" => "toto"
+        ],
+      ];
+      return $user_data;
     }
 
     public function connexion($args){

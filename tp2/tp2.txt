@@ -1,10 +1,9 @@
 == TP 2 - Préter un jeu ==
 
 - Sur la page pret_jeux
-- Afficher une première liste contenant la liste des utilisateurs
-(appel du WS get-users.php pour obtenir la liste au format JSON)
+- Afficher une première liste contenant la liste des utilisateurs -> pages Collection -> Pret
 - Puis dans une seconde liste, afficher la liste des jeux de l'utilisateurs
 (appel du WS get-jeux-by-user.php avec l'id de l'utilisateur en parametre de post)
-- Lors de la soumission appeler le WS save-pret-jeux.php avec l'id de l'utilisateur 
+- Lors de la soumission appeler le WS save-pret-jeux.php avec l'id de l'utilisateur
 et l'id du jeu en paramètre du post
-Puis afficher le résultat en haut sous forme de message 
+Puis afficher le résultat en haut sous forme de message
