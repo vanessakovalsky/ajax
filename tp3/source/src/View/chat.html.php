@@ -15,6 +15,6 @@
   </table>
   <form id="input-chat">
     <input type="text" id="chat-text" />
-    <input type="button" value="Envoyer" onclick="envoyerChat()" />
+    <input type="button" value="Envoyer" onclick="envoyerChat(this)" />
   </form>
 </div>
