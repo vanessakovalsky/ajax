@@ -101,10 +101,11 @@ class RouterController {
         return $content;
       case "ListMessage":
         $membre = new MembreUserController();
-        ob_start();
-        $content = $membre->ListeMessages($this->db);
-        $content = ob_get_clean();
-        return $content;
+        $json = $membre->ListeMessages($this->db);
+        header('Content-type: application/json');
+        echo $json;
+        die();
+        //return $content;
       default:
         return 'Action inexistante';
       }

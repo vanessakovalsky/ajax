@@ -6,7 +6,7 @@ class Autoloader {
   }
 
   static function autoload($class){
-    require(__DIR__.'\\'.$class.'.class.php');
+    include(__DIR__.'\\'.$class.'.class.php');
   }
 }
 

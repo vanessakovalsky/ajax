@@ -35,7 +35,8 @@ class MembreUserController extends UtilisateurController
   public function ListeMessages($db){
     $stmt = $db->prepare("SELECT * FROM messages");
     $stmt->execute();
-    $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
-    var_dump($results);
+    $result = $stmt->fetchAll();
+    $json_result = json_encode($result);
+    return $json_result;
   }
 }
