@@ -42,7 +42,7 @@ function updateListeJeu(user_id){
             select_jeu.innerHTML = '';
             response.forEach(function(element){
               var opt = document.createElement('option');
-              opt.value = element.nom;
+              opt.value = element.id;
               opt.innerHTML = element.nom;
               select_jeu.appendChild(opt);
             });
@@ -57,7 +57,16 @@ function updateListeJeu(user_id){
   xhr.send(user_id_json);
 }
 
-function sendPret(pret){
+window.onload = function() {
+  var form_pret = document.getElementById("pret_jeu");
+  form_pret.addEventListener('submit',function(event){
+    event.preventDefault();
+    event.stopPropagation();
+    sendPret(event.target);
+})
+}
+
+function sendPret(){
   var xhr = new XMLHttpRequest();
   var url = 'http://localhost/ajax/tp2/corrige/save-pret-jeu.php';
   xhr.onreadystatechange = function()
@@ -65,15 +74,14 @@ function sendPret(pret){
           if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0))
           {
             var response = JSON.parse(xhr.responseText);
-            var select_jeu = document.getElementById("jeu_select");
-              select_jeu.appendChild(opt);
-
-
+            var reponse_div = document.getElementById("response");
+            reponse_div.innerText = response;
           }
       }
 
   xhr.open('POST', url);
-
-  var user_id_json = JSON.stringify({id_user: user_id.value});
+  var user = document.getElementById("user_select").value;
+  var jeu = document.getElementById("jeu_select").value;
+  var user_id_json = JSON.stringify({id_user: user, id_jeu:jeu});
   xhr.send(user_id_json);
 }

@@ -1,5 +1,6 @@
 Selection de l'utilisateurs
-<form id="pret_jeu" onsubmit="sendPret(this)">
+<div id="response"></div>
+<form id="pret_jeu" onsubmit="sendPret(this)" method="POST">
   <select id="user_select" onchange="updateListeJeu(this)">
 <?php
 foreach($reponse_liste_user as $user){
