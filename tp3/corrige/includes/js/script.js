@@ -67,6 +67,7 @@ window.onload = function() {
     });
   }
   loadUser();
+  loadMessages();
 }
 
 function sendPret(){
@@ -100,6 +101,23 @@ function loadUser(){
     div_user.empty();
     data.forEach(function(element){
       div_user.append(element.username + '<br />');
+    })
+  });
+
+}
+
+function loadMessages(){
+  var url = 'http://localhost/ajax/tp3/corrige/index.php?actions=ListMessage';
+  $.ajax({
+    url: url,
+    context: document.body
+  }).done(function( data ) {
+    console.log(data);
+    div_user = $('#users');
+    div_loading = $('#text');
+    div_loading.empty();
+    data.forEach(function(element){
+      div_loading.append(element.user_id + '-' + element.text + '<br />');
     })
   });
 

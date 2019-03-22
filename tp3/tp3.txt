@@ -1,17 +1,15 @@
 == TP 3 - Chat ==
 
 - Nous allons ajouter une fenetre de chat pour les utilisateurs connectés
-- Importer les nouvelles tables depuis le fichier chat.sql
-- Nous allons travailler dans le fichier src/View/chat.html.php 
+- Importer les nouvelles tables depuis le fichier messages.sql
+- Nous allons travailler dans le fichier src/View/chat.html.php
 - Le chat n'est accessible qu'aux utilisateurs connectés
 - On affiche alors :
 	- la liste des utilisateurs connectés
 	- la liste des messages
-	- une zone de saisie de message 
+	- une zone de saisie de message
 - Côté JS nous devons :
-	- récupérer la liste des utilisateurs connectés depuis le WS get-logged-users.php 
+	- récupérer la liste des utilisateurs connectés depuis le WS get-logged-users.php
 	- récuperer la liste des messages depuis le WS get-messages.php
-	- envoyer le message saisi au WS post-message.php 
+	- envoyer le message saisi au WS post-message.php
 	- Rafraichir toutes les 5 secondes la liste des messages et des users connectés
-	
-
