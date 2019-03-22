@@ -13,7 +13,7 @@ if ($id_user == 1)
     [
       "id" => 3,
       "nom" => "Catane",
-      "editeur" => "Asmodée"
+      "editeur" => "Asmodee"
     ]
   ];
 }
@@ -27,7 +27,7 @@ else {
     [
       "id" => 3,
       "nom" => "Catane",
-      "editeur" => "Asmodée"
+      "editeur" => "Asmodee"
     ]
   ];
 }
