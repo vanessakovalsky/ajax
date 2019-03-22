@@ -2,9 +2,10 @@
 <head>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="includes/styles/style.css">
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="includes/js/script.js"></script>
 </head>
 <body>
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
@@ -29,6 +30,14 @@
           </div>
         </li>
       <?php } ?>
+      <?php if(isset($_SESSION['user_name'])){// && $_SESSION['user_role'] == 0){?>
+      <li class="nav-item">
+        <a class="nav-link dropdown-toggle" id="dropdown03" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">Collection</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown03">
+          <a class="dropdown-item" href="index.php?actions=PretJeu">Prêt</a>
+        </div>
+      </li>
+    <?php } ?>
       <?php if(!isset($_SESSION['user_name'])){?>
         <li class="nav-item"><a class="nav-link" href="index.php?actions=Connexion">Connexion</a></li>
       <?php } ?>

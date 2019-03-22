@@ -34,5 +34,17 @@
     <label for="avatar">Avatar</label>
     <input type="file" class="form-control-file" id="avatar">
   </div>
+  <div class="form-group">
+    <label for="cp">Code postal</label>
+    <input name="cp" type="number" onfocusout="getVilleByCP(this)" />
+  </div>
+  <div class="form-group">
+    <label for="ville">Ville</label>
+    <select name="ville" id="ville"></select>
+  </div>
+  <div class="form-group">
+    <label for="departement">Département</label>
+    <input name="departement" id="departement" disabled type="text" />
+  </div>
     <button type="submit" class="btn btn-primary">Envoyer</button>
 </form>

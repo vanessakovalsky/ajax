@@ -4,8 +4,13 @@ namespace Controller;
 use Session\Session;
 use Controller\AdminUserController;
 use Controller\JeuController;
+use Controller\MembreUserController;
 
 class RouterController {
+
+  public function __construct($db){
+    $this->db = $db;
+  }
 
   public function route($method, $action, Session $session){
     if($method == 'POST'){
@@ -76,12 +81,30 @@ class RouterController {
         break;
       case 'VoirUtilisateur':
           break;
-       case 'VoirJeu':
-          $jeu = new JeuController();
-          ob_start();
-          $content = $jeu->voirJeu(1);
-          $content = ob_get_clean();
-          return $content;
+      case 'VoirJeu':
+        $jeu = new JeuController();
+        ob_start();
+        $content = $jeu->voirJeu(1);
+        $content = ob_get_clean();
+        return $content;
+      case 'PretJeu':
+        $collection = new CollectionController();
+        ob_start();
+        $content = $collection->pretJeu();
+        $content = ob_get_clean();
+        return $content;
+      case 'Chat':
+        $membre = new MembreUserController();
+        ob_start();
+        $content = $membre->Chat();
+        $content = ob_get_clean();
+        return $content;
+      case "ListMessage":
+        $membre = new MembreUserController();
+        ob_start();
+        $content = $membre->ListeMessages($this->db);
+        $content = ob_get_clean();
+        return $content;
       default:
         return 'Action inexistante';
       }

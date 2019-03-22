@@ -58,12 +58,15 @@ function updateListeJeu(user_id){
 }
 
 window.onload = function() {
-  var form_pret = document.getElementById("pret_jeu");
-  form_pret.addEventListener('submit',function(event){
-    event.preventDefault();
-    event.stopPropagation();
-    sendPret();
-})
+  if(document.getElementById("pret_jeu")){
+    var form_pret = document.getElementById("pret_jeu");
+    form_pret.addEventListener('submit',function(event){
+      event.preventDefault();
+      event.stopPropagation();
+      sendPret(event.target);
+    });
+  }
+  loadUser();
 }
 
 function sendPret(){
@@ -84,4 +87,20 @@ function sendPret(){
   var jeu = document.getElementById("jeu_select").value;
   var user_id_json = JSON.stringify({id_user: user, id_jeu:jeu});
   xhr.send(user_id_json);
+}
+
+function loadUser(){
+  var url = 'http://localhost/ajax/tp3/corrige/get-logged-users.php';
+  $.ajax({
+    url: url,
+    context: document.body
+  }).done(function( data ) {
+    console.log(data);
+    div_user = $('#users');
+    div_user.empty();
+    data.forEach(function(element){
+      div_user.append(element.username + '<br />');
+    })
+  });
+
 }
