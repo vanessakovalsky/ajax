@@ -3,7 +3,8 @@
 - Sur la page pret_jeux
 - Afficher une première liste contenant la liste des utilisateurs -> pages Collection -> Pret
 - Puis dans une seconde liste, afficher la liste des jeux de l'utilisateurs
-(appel du WS get-jeux-by-user.php avec l'id de l'utilisateur en parametre de post)
-- Lors de la soumission appeler le WS save-pret-jeux.php avec l'id de l'utilisateur
-et l'id du jeu en paramètre du post
+(appel du WS get-jeux-by-user.php avec l'id de l'utilisateur
+en parametre de post (nom du parametre : "id_user"))
+- Lors de la soumission appeler le WS save-pret-jeu.php avec l'id de l'utilisateur
+et l'id du jeu en paramètre du post (parametre "id_user" et "id_jeu")
 Puis afficher le résultat en haut sous forme de message
