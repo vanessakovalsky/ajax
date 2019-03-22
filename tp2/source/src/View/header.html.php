@@ -30,6 +30,14 @@
           </div>
         </li>
       <?php } ?>
+      <?php if(isset($_SESSION['user_name'])){// && $_SESSION['user_role'] == 0){?>
+      <li class="nav-item">
+        <a class="nav-link dropdown-toggle" id="dropdown03" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">Collection</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown03">
+          <a class="dropdown-item" href="index.php?actions=PretJeu">Prêt</a>
+        </div>
+      </li>
+    <?php } ?>
       <?php if(!isset($_SESSION['user_name'])){?>
         <li class="nav-item"><a class="nav-link" href="index.php?actions=Connexion">Connexion</a></li>
       <?php } ?>
