@@ -18,8 +18,8 @@ abstract class UtilisateurController
     //traiter le formulaire
     else{
       $utilisateur = new UtilisateurModel();
-      $utilisateur->setNom($values['nom']);
-      return 'Mon Utilisateur a été ajouté ! '.$utilisateur->getNom();
+      $utilisateur->setFirstName($values['nom']);
+      return 'Mon Utilisateur a été ajouté ! '.$utilisateur->getFirstName();
     }
   }
 

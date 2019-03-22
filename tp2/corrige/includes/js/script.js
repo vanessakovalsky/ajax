@@ -56,3 +56,24 @@ function updateListeJeu(user_id){
   var user_id_json = JSON.stringify({id_user: user_id.value});
   xhr.send(user_id_json);
 }
+
+function sendPret(pret){
+  var xhr = new XMLHttpRequest();
+  var url = 'http://localhost/ajax/tp2/corrige/save-pret-jeu.php';
+  xhr.onreadystatechange = function()
+      {
+          if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0))
+          {
+            var response = JSON.parse(xhr.responseText);
+            var select_jeu = document.getElementById("jeu_select");
+              select_jeu.appendChild(opt);
+
+
+          }
+      }
+
+  xhr.open('POST', url);
+
+  var user_id_json = JSON.stringify({id_user: user_id.value});
+  xhr.send(user_id_json);
+}
